@@ -20,4 +20,4 @@ jobs:
 
       - name: Use pluto
         run: |
-          pluto detect-files -d ../../yamls/
+          pluto detect-files -d yamls/
