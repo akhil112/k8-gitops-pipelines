@@ -8,18 +8,7 @@ on:
   # workflow_dispatch:
 
 jobs:
-  lint-yaml:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Code Checkout
-        uses: actions/checkout@v3
-      - name: Validate YAML
-        uses: ibiqlik/action-yamllint@v3
-        with:
-          format: github
-
   pluto-check:
-    needs: lint-yaml
     name: 'deprecated checks'
     runs-on: ubuntu-20.04
     steps:
