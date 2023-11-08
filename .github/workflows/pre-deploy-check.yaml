@@ -17,4 +17,4 @@ jobs:
 
       - name: Use pluto
         run: |
-          pluto detect-files -d pkg/finder/testdata
+          pluto detect-files -d yamls/
