@@ -1,0 +1,20 @@
+name: example-basic
+# This workflow represents a set of basic End-to-End tests
+on:
+  push:
+    branches:
+      - 'main'
+  # pull_request:
+  # workflow_dispatch:
+
+jobs:
+
+  pluto-check:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Download Pluto
+        uses: FairwindsOps/pluto/github-action@master
+
+     - name: Use pluto
+       run: |
+         pluto detect-files -d yamls/
