@@ -18,7 +18,7 @@ jobs:
         uses: karancode/kustomize-github-action@master
         with:
           kustomize_version: '3.0.0'
-          kustomize_build_dir: '.'
+          kustomize_build_dir: 'yamls/'
           kustomize_comment: true
           
   pluto-check:
