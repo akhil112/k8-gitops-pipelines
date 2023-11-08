@@ -8,7 +8,18 @@ on:
   # workflow_dispatch:
 
 jobs:
+  lint-yaml:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Code Checkout
+        uses: actions/checkout@v3
+      - name: Validate YAML
+        uses: ibiqlik/action-yamllint@v3
+        with:
+          format: github
+
   pluto-check:
+    needs: lint-yaml
     name: 'deprecated checks'
     runs-on: ubuntu-20.04
     steps:
@@ -33,7 +44,7 @@ jobs:
         uses: karancode/kustomize-github-action@master
         with:
           kustomize_version: '3.0.0'
-          kustomize_build_dir: 'yamls/'
+          kustomize_build_dir: '.'
           
 
   
