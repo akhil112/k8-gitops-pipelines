@@ -15,6 +15,6 @@ jobs:
       - name: Download Pluto
         uses: FairwindsOps/pluto/github-action@master
 
-     - name: Use pluto
-       run: |
-         pluto detect-files -d yamls/
+      - name: Use pluto
+        run: |
+          pluto detect-files -d pkg/finder/testdata
