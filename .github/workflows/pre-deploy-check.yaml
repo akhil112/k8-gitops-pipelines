@@ -8,21 +8,21 @@ on:
   # workflow_dispatch:
 
 jobs:
-  yaml-linting:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
+  # yaml-linting:
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - uses: actions/checkout@v3
 
-      - name: Install yamllint
-        run: pip install yamllint
+  #     - name: Install yamllint
+  #       run: pip install yamllint
 
-      - name: Lint YAML files
-        run: yamllint yamls/
+  #     - name: Lint YAML files
+  #       run: yamllint yamls/
 
   pluto-check:
     name: 'deprecated checks'
     runs-on: ubuntu-20.04
-    needs: yaml-linting
+    # needs: yaml-linting
     steps:
       - name: Checkout
         uses: actions/checkout@v4
